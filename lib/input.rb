@@ -6,11 +6,13 @@ class Input
   end
 
   def self.get_matrix_size
-    $stdin.gets.chomp.to_i
+    @size = $stdin.gets.chomp.to_i
   end
 
   def self.get_bot_coordinates
-    $stdin.gets.gsub(/\s+/, "").chars.map{|int| int.to_i}
+    coordinates = $stdin.gets.gsub(/\s+/, "").chars.map{|int| int.to_i}
+    error_message(coordinates)
+    coordinates
   end
 
   def self.second_instructions
@@ -19,5 +21,11 @@ class Input
 
   def self.third_instructions
     puts "Enter the matrix with the bot and princess in their positions"
+  end
+
+  def self.error_message(input)
+    if input.first >= @size
+      raise ArgumentError.new("Those coordinates do not exist.")
+    end
   end
 end
