@@ -17,11 +17,6 @@ class Matrix
     @matrix = matrix.map{|row| row.chars}
   end
 
-  # def find_bot_position
-  #   x = @matrix.count/2
-  #   y = @matrix.count/2
-  #   @bot = Bot.new([y, x])
-  # end
   def find_princess_position
     @matrix.each_with_index do |row, x|
       row.each_with_index do |position, y|

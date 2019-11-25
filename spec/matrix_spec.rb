@@ -4,7 +4,7 @@ RSpec.describe Matrix do
   before do
     allow($stdin).to receive(:gets).and_return("3")
     size = $stdin.gets.to_i
-    allow($stdin).to receive(:gets).and_return([5,5])
+    allow($stdin).to receive(:gets).and_return([0,0])
     bot = $stdin.gets
     @matrix = Matrix.new(size, Bot.new(bot))
   end
@@ -13,7 +13,7 @@ RSpec.describe Matrix do
     it "initializes with matrix size and bot coordinates from Input" do
       expect(@matrix.size).to eq(3)
       expect(@matrix.bot).to be_an_instance_of(Bot)
-      expect(@matrix.bot.coordinates).to eq([5,5])
+      expect(@matrix.bot.coordinates).to eq([0,0])
     end
   end
 
