@@ -2,7 +2,6 @@ require_relative 'input'
 require_relative 'matrix'
 require_relative 'bot'
 require_relative 'princess'
-require 'pry'
 
 class SavePrincess
   attr_reader :matrix
